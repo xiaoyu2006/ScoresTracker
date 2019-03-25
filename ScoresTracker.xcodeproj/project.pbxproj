@@ -11,8 +11,8 @@
 		BAE7016C2249092400160BBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7016B2249092400160BBF /* ViewController.swift */; };
 		BAE7016F2249092400160BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE7016D2249092400160BBF /* Main.storyboard */; };
 		BAE701712249092600160BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAE701702249092600160BBF /* Assets.xcassets */; };
-		BAE701742249092600160BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE701722249092600160BBF /* LaunchScreen.storyboard */; };
 		BAE7017F2249092600160BBF /* ScoresTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7017E2249092600160BBF /* ScoresTrackerTests.swift */; };
+		BAE7018A2249095000160BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE701892249095000160BBF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +31,11 @@
 		BAE7016B2249092400160BBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAE7016E2249092400160BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAE701702249092600160BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BAE701732249092600160BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAE701752249092600160BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAE7017A2249092600160BBF /* ScoresTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoresTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE7017E2249092600160BBF /* ScoresTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTrackerTests.swift; sourceTree = "<group>"; };
 		BAE701802249092600160BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAE701892249095000160BBF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,8 @@
 				BAE7016B2249092400160BBF /* ViewController.swift */,
 				BAE7016D2249092400160BBF /* Main.storyboard */,
 				BAE701702249092600160BBF /* Assets.xcassets */,
-				BAE701722249092600160BBF /* LaunchScreen.storyboard */,
 				BAE701752249092600160BBF /* Info.plist */,
+				BAE701892249095000160BBF /* LaunchScreen.storyboard */,
 			);
 			path = ScoresTracker;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAE701742249092600160BBF /* LaunchScreen.storyboard in Resources */,
+				BAE7018A2249095000160BBF /* LaunchScreen.storyboard in Resources */,
 				BAE701712249092600160BBF /* Assets.xcassets in Resources */,
 				BAE7016F2249092400160BBF /* Main.storyboard in Resources */,
 			);
@@ -227,14 +227,6 @@
 				BAE7016E2249092400160BBF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BAE701722249092600160BBF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAE701732249092600160BBF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
