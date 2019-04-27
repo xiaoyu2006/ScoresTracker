@@ -67,6 +67,7 @@
                                     <outlet property="nameLabel" destination="ncW-eI-QJd" id="4Tx-mq-AH4"/>
                                     <outlet property="scoreLabel" destination="arw-PJ-VSX" id="cKo-kX-Ksh"/>
                                     <outlet property="subjectLabel" destination="oHS-j2-cyV" id="X9J-qd-Hqk"/>
+                                    <segue destination="iik-2z-QJR" kind="show" id="P4m-7y-OAx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -152,11 +153,7 @@
                         <viewLayoutGuide key="safeArea" id="NY6-NG-KGg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add One Test" id="KGM-Wc-JLe">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="v4z-gQ-2u8">
-                            <connections>
-                                <action selector="saveButton:" destination="iik-2z-QJR" id="kx1-7g-eCS"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="v4z-gQ-2u8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="LcT-js-iAe" id="6yG-kp-ivN"/>

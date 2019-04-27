@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 var subjectList = [
     "Chinese",
@@ -51,12 +52,11 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        // pass
+        newTest.name = nameField.text ?? "Test name"
+        newTest.score = Double(scoreField.text ?? "100") ?? 100.0
+        print(newTest.name)
     }
     
-    @IBAction func saveButton(_ sender: Any) {
-        // pass
-    }
     /*
     // MARK: - Navigation
 
