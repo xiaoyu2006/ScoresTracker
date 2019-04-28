@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class TableViewController: UITableViewController {
 
@@ -20,8 +21,17 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadSamples()
     }
 
+    private func loadSamples() {
+        
+        let simpleTest: Testment = Testment(name: "SimpleTest", score: 99.5, subject: .Math, date: Date(timeIntervalSince1970: 0))
+        
+        tests += [simpleTest]
+    }
+
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,19 +39,41 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tests.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "TableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let test = tests[indexPath.row]
+        
+        cell.scoreLabel.text = String(test.score)
+        cell.nameLabel.text = test.name
+        switch(test.subject) {
+        case .Chinese: cell.subjectLabel.text = "Chinese"
+        case .Math: cell.subjectLabel.text = "Math"
+        case .English: cell.subjectLabel.text = "English"
+        default: break
+        }
+        
+        let timeZone = TimeZone.init(identifier: "UTC")
+        let myFormatter = DateFormatter()
+        myFormatter.timeZone = timeZone
+        myFormatter.dateFormat = "yy-MM-dd HH"
+        //...
+        let date: String = myFormatter.string(from: test.date)
+        cell.dateLabel.text = date
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -78,14 +110,34 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+        case "AddItem":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+        
+        case "ShowDetail":
+            guard let DetailViewController = segue.destination as? CreateViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? TableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            let selectedTest = tests[indexPath.row]
+            DetailViewController.test = selectedTest
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
-    */
 
 }

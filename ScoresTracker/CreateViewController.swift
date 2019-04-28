@@ -17,7 +17,7 @@ var subjectList = [
 
 class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    var newTest: Testment!
+    var test: Testment!
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var scoreField: UITextField!
@@ -30,7 +30,22 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         scoreField.delegate = self
         subjectPicker.dataSource = self
         subjectPicker.delegate = self
-        // Do any additional setup after loading the view.
+        
+        if let test = test {
+            navigationItem.title = test.name
+            nameField.text = test.name
+            scoreField.text = String(test.score)
+            switch(test.subject) {
+            case .Chinese:
+                subjectPicker.selectRow(0, inComponent: 0, animated: false)
+            case .Math:
+                subjectPicker.selectRow(1, inComponent: 0, animated: false)
+            case .English:
+                subjectPicker.selectRow(2, inComponent: 0, animated: false)
+            default: break
+            }
+            testDatePicker.date = test.date
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -52,9 +67,9 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        newTest.name = nameField.text ?? "Test name"
-        newTest.score = Double(scoreField.text ?? "100") ?? 100.0
-        print(newTest.name)
+        test.name = nameField.text ?? "Test name"
+        test.score = Double(scoreField.text ?? "100") ?? 100.0
+        print(test.name)
     }
     
     /*
