@@ -66,7 +66,7 @@ class TableViewController: UITableViewController {
         let timeZone = TimeZone.init(identifier: "UTC")
         let myFormatter = DateFormatter()
         myFormatter.timeZone = timeZone
-        myFormatter.dateFormat = "yy-MM-dd HH"
+        myFormatter.dateFormat = "yyyy-MM-dd"
         //...
         let date: String = myFormatter.string(from: test.date)
         cell.dateLabel.text = date
