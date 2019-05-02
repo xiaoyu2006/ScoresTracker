@@ -75,6 +75,23 @@ class TableViewController: UITableViewController {
     }
     
 
+    @IBAction func unwindToTestList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? CreateViewController, let test = sourceViewController.test {
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing test.
+                tests[selectedIndexPath.row] = test
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                // Add a new test.
+                let newIndexPath = IndexPath(row: tests.count, section: 0)
+                
+                tests.append(test)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -118,7 +135,7 @@ class TableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
         case "AddItem":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            os_log("Adding a new testment.", log: OSLog.default, type: .debug)
         
         case "ShowDetail":
             guard let DetailViewController = segue.destination as? CreateViewController else {

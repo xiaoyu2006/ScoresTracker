@@ -23,6 +23,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     @IBOutlet weak var scoreField: UITextField!
     @IBOutlet weak var testDatePicker: UIDatePicker!
     @IBOutlet weak var subjectPicker: UIPickerView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,20 +67,46 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        test.name = nameField.text ?? "Test name"
-        test.score = Double(scoreField.text ?? "100") ?? 100.0
-        print(test.name)
-    }
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = nameField.text ?? ""
+        let score = Double(scoreField.text ?? "")
+        var subj: Subjects!
+        switch subjectPicker.selectedRow(inComponent: 0) {
+        case 0: subj = .Chinese
+        case 1: subj = .Math
+        case 2: subj = .English
+        default: break
+        }
+        let date = testDatePicker.date
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        test = Testment(name: name, score: score!, subject: subj, date: date)
     }
-    */
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The CreateViewController is not inside a navigation controller.")
+        }
+    }
 
 }
