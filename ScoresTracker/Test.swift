@@ -38,10 +38,11 @@ class Testment: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         let testName = aDecoder.decodeObject(forKey: PropertyKey.name)
-        let testScore = aDecoder.decodeObject(forKey: PropertyKey.score)
-        let testSubject = aDecoder.decodeObject(forKey: PropertyKey.subject)
+        let testScore = aDecoder.decodeDouble(forKey: PropertyKey.score)
+        let testSubject = aDecoder.decodeInteger(forKey: PropertyKey.subject)
         let testDate = aDecoder.decodeObject(forKey: PropertyKey.date)
-        self.init(name: testName as! String, score: testScore as! Double, subject: testSubject as! Int, date: testDate as! Date)
+        self.init(name: testName as? String ?? "nameError", score: testScore as? Double ?? 0, subject: testSubject as? Int ?? 0, date: testDate as? Date ?? Date(timeIntervalSince1970: 100000))
+        // Date & Score & Subject
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
