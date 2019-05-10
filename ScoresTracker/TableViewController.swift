@@ -15,18 +15,21 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        loadSamples()
+        if let savedTests = loadTests() {
+            tests += savedTests
+        } else {
+            loadSamples()
+        }
     }
 
     private func loadSamples() {
         
-        let simpleTest: Testment = Testment(name: "SimpleTest", score: 99.5, subject: .Math, date: Date(timeIntervalSince1970: 0))
+        let simpleTest: Testment = Testment(name: "SimpleTest", score: 99.5, subject: 1, date: Date(timeIntervalSince1970: 0))
         
         tests += [simpleTest]
     }
@@ -57,9 +60,9 @@ class TableViewController: UITableViewController {
         cell.scoreLabel.text = String(test.score)
         cell.nameLabel.text = test.name
         switch(test.subject) {
-        case .Chinese: cell.subjectLabel.text = "Chinese"
-        case .Math: cell.subjectLabel.text = "Math"
-        case .English: cell.subjectLabel.text = "English"
+        case 0: cell.subjectLabel.text = "Chinese"
+        case 1: cell.subjectLabel.text = "Math"
+        case 2: cell.subjectLabel.text = "English"
         default: break
         }
         
@@ -89,6 +92,7 @@ class TableViewController: UITableViewController {
                 tests.append(test)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            saveTests()
         }
     }
     
@@ -106,6 +110,7 @@ class TableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             tests.remove(at: indexPath.row)
+            saveTests()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -158,4 +163,19 @@ class TableViewController: UITableViewController {
         }
     }
 
+    
+    private func saveTests() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tests, toFile: Testment.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Tests successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save tests...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadTests() -> [Testment]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Testment.ArchiveURL.path) as? [Testment]
+    }
+
+    
 }

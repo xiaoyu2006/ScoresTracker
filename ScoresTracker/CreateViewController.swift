@@ -36,15 +36,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             navigationItem.title = test.name
             nameField.text = test.name
             scoreField.text = String(test.score)
-            switch(test.subject) {
-            case .Chinese:
-                subjectPicker.selectRow(0, inComponent: 0, animated: false)
-            case .Math:
-                subjectPicker.selectRow(1, inComponent: 0, animated: false)
-            case .English:
-                subjectPicker.selectRow(2, inComponent: 0, animated: false)
-            default: break
-            }
+            subjectPicker.selectRow(test.subject, inComponent: 0, animated: false)
             testDatePicker.date = test.date
         }
     }
@@ -81,13 +73,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         
         let name = nameField.text ?? ""
         let score = Double(scoreField.text ?? "")
-        var subj: Subjects!
-        switch subjectPicker.selectedRow(inComponent: 0) {
-        case 0: subj = .Chinese
-        case 1: subj = .Math
-        case 2: subj = .English
-        default: break
-        }
+        var subj = subjectPicker.selectedRow(inComponent: 0)
         let date = testDatePicker.date
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
