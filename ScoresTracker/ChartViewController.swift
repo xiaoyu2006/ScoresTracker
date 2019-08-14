@@ -15,6 +15,12 @@ func date2Int(date: Date) -> Int {
     return timeStamp
 }
 
+func date2Str(date: Date) -> String {
+    let dateformatter = DateFormatter()
+    dateformatter.dateFormat = "yyyy.MM.dd"
+    return dateformatter.string(from: date)
+}
+
 class ChartViewController: UIViewController {
 
     var tests = [Testment]()
@@ -64,6 +70,12 @@ class ChartViewController: UIViewController {
         line0.colors = [NSUIColor.brown]
         line1.colors = [NSUIColor.blue]
         line2.colors = [NSUIColor.red]
+        line0.circleColors = [UIColor.brown]
+        line1.circleColors = [UIColor.blue]
+        line2.circleColors = [UIColor.red]
+        line0.drawCircleHoleEnabled = false
+        line1.drawCircleHoleEnabled = false
+        line2.drawCircleHoleEnabled = false
         
         let data = LineChartData()
         data.addDataSet(line0)
@@ -71,6 +83,11 @@ class ChartViewController: UIViewController {
         data.addDataSet(line2)
         
         scrChart.data = data
+        
+        scrChart.chartDescription!.enabled = true;
+        scrChart.chartDescription!.text = "Score Chart"
+        
+        scrChart.noDataText = "No tests available now."
     }
     
 

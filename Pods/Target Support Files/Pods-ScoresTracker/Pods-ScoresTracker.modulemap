@@ -1,0 +1,6 @@
+framework module Pods_ScoresTracker {
+  umbrella header "Pods-ScoresTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
