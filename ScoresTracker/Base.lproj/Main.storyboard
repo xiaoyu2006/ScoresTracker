@@ -10,6 +10,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Chart-->
+        <scene sceneID="0lq-dG-z6i">
+            <objects>
+                <viewController id="rTZ-8n-IAK" customClass="ChartViewController" customModule="ScoresTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yaN-pf-O7O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOo-Ha-LhT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="10" y="64" width="355" height="593"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w4B-kA-TCg" firstAttribute="trailing" secondItem="aOo-Ha-LhT" secondAttribute="trailing" constant="10" id="4hD-Oy-d74"/>
+                            <constraint firstItem="aOo-Ha-LhT" firstAttribute="leading" secondItem="w4B-kA-TCg" secondAttribute="leading" constant="10" id="EdP-2E-Uh5"/>
+                            <constraint firstItem="w4B-kA-TCg" firstAttribute="bottom" secondItem="aOo-Ha-LhT" secondAttribute="bottom" constant="10" id="Gbv-PN-dML"/>
+                            <constraint firstItem="aOo-Ha-LhT" firstAttribute="top" secondItem="w4B-kA-TCg" secondAttribute="top" id="cUB-Mi-Svg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w4B-kA-TCg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chart" id="Qt6-am-Pbp"/>
+                    <connections>
+                        <outlet property="scrChart" destination="aOo-Ha-LhT" id="Iw4-5D-u3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3X-TQ-HAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="-299"/>
+        </scene>
         <!--Your Tests-->
         <scene sceneID="nE7-ve-eHb">
             <objects>
@@ -78,6 +108,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Tests" id="HCd-gz-U4U">
+                        <barButtonItem key="leftBarButtonItem" title="Chart" id="5zD-aa-8p9">
+                            <connections>
+                                <segue destination="rTZ-8n-IAK" kind="show" identifier="ShowChart" id="XEJ-D3-6pk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="1vC-4Z-D5p">
                             <connections>
                                 <segue destination="iik-2z-QJR" kind="show" identifier="AddItem" id="qIH-DF-dEJ"/>
@@ -171,7 +206,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9B-Uc-sQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="A1M-xd-T3y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="419"/>
+            <point key="canvasLocation" x="2198" y="-299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IIW-Qd-C5m">
@@ -189,7 +224,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N12-5L-1q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413.60000000000002" y="-299.10044977511245"/>
+            <point key="canvasLocation" x="1308" y="-1079"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f7f-nF-JzQ">
@@ -207,10 +242,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENB-aQ-iVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="414" y="419"/>
+            <point key="canvasLocation" x="2199" y="-1079"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fFD-wS-Emp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fhn-ir-MnR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XBr-0V-fOs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rTZ-8n-IAK" kind="relationship" relationship="rootViewController" id="Yky-Gb-Dlk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1a-uI-REY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="-1079"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qIH-DF-dEJ"/>
+        <segue reference="XEJ-D3-6pk"/>
     </inferredMetricsTieBreakers>
 </document>

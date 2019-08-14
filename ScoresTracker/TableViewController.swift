@@ -157,7 +157,10 @@ class TableViewController: UITableViewController {
             }
             let selectedTest = tests[indexPath.row]
             DetailViewController.test = selectedTest
-            
+        
+        case "ShowChart":
+            break
+        
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
