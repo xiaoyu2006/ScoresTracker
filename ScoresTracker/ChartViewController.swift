@@ -15,10 +15,18 @@ func date2Int(date: Date) -> Int {
     return timeStamp
 }
 
-func date2Str(date: Date) -> String {
+func stamp2Str(date timeStamp: Double) -> String {
     let dateformatter = DateFormatter()
     dateformatter.dateFormat = "yyyy.MM.dd"
+    let date = Date(timeIntervalSince1970: TimeInterval(exactly: timeStamp)!)
     return dateformatter.string(from: date)
+}
+
+public class LineDateChartFormatter: NSObject, IAxisValueFormatter {
+    let months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return stamp2Str(date: value)
+    }
 }
 
 class ChartViewController: UIViewController {
@@ -88,6 +96,12 @@ class ChartViewController: UIViewController {
         scrChart.chartDescription!.text = "Score Chart"
         
         scrChart.noDataText = "No tests available now."
+        
+        scrChart.xAxis.labelPosition = .bottom
+        scrChart.xAxis.labelRotationAngle = -30
+        
+        let formator: LineDateChartFormatter = LineDateChartFormatter()
+        scrChart.xAxis.valueFormatter = formator
     }
     
 
