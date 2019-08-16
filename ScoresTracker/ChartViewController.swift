@@ -100,6 +100,9 @@ class ChartViewController: UIViewController {
         scrChart.xAxis.labelPosition = .bottom
         scrChart.xAxis.labelRotationAngle = -30
         
+        scrChart.scaleXEnabled = true
+        scrChart.scaleYEnabled = true
+        
         let formator: LineDateChartFormatter = LineDateChartFormatter()
         scrChart.xAxis.valueFormatter = formator
     }
