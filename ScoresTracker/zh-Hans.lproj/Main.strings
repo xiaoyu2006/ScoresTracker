@@ -1,0 +1,48 @@
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "1vC-4Z-D5p"; */
+"1vC-4Z-D5p.title" = "添加";
+
+/* Class = "UIBarButtonItem"; title = "Chart"; ObjectID = "5zD-aa-8p9"; */
+"5zD-aa-8p9.title" = "表格";
+
+/* Class = "UINavigationItem"; title = "Your Tests"; ObjectID = "HCd-gz-U4U"; */
+"HCd-gz-U4U.title" = "测试";
+
+/* Class = "UINavigationItem"; title = "New Test"; ObjectID = "KGM-Wc-JLe"; */
+"KGM-Wc-JLe.title" = "新测试";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "LcT-js-iAe"; */
+"LcT-js-iAe.placeholder" = "测试名";
+
+/* Class = "UITextField"; text = "TestName"; ObjectID = "LcT-js-iAe"; */
+"LcT-js-iAe.text" = "测试名";
+
+/* Class = "UITextField"; placeholder = "Score"; ObjectID = "Qf1-u8-E6B"; */
+"Qf1-u8-E6B.placeholder" = "分数";
+
+/* Class = "UITextField"; text = "100"; ObjectID = "Qf1-u8-E6B"; */
+"Qf1-u8-E6B.text" = "100";
+
+/* Class = "UINavigationItem"; title = "Chart"; ObjectID = "Qt6-am-Pbp"; */
+"Qt6-am-Pbp.title" = "表格";
+
+/* Class = "UILabel"; text = "Test date:"; ObjectID = "RtF-jn-SBH"; */
+"RtF-jn-SBH.text" = "测试日期:";
+
+/* Class = "UILabel"; text = "Subject:"; ObjectID = "UOx-Hu-TJy"; */
+"UOx-Hu-TJy.text" = "课目:";
+
+/* Class = "UILabel"; text = "Score"; ObjectID = "arw-PJ-VSX"; */
+"arw-PJ-VSX.text" = "分数";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ncW-eI-QJd"; */
+"ncW-eI-QJd.text" = "测试名";
+
+/* Class = "UILabel"; text = "Subject"; ObjectID = "oHS-j2-cyV"; */
+"oHS-j2-cyV.text" = "课目";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "scC-Tg-jD0"; */
+"scC-Tg-jD0.text" = "测试日期";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "v4z-gQ-2u8"; */
+"v4z-gQ-2u8.title" = "保存";
