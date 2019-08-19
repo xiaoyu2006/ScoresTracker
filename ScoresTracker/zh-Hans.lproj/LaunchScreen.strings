@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Track your scores."; ObjectID = "FTd-Xn-zhG"; */
+"FTd-Xn-zhG.text" = "记录分数";
+
+/* Class = "UILabel"; text = "ScoresTracker"; ObjectID = "GJd-Yh-RWb"; */
+"GJd-Yh-RWb.text" = "记分者";
+
+/* Class = "UILabel"; text = "An app to track your Scores."; ObjectID = "obG-Y5-kRd"; */
+"obG-Y5-kRd.text" = "一个记录你的分数都App";

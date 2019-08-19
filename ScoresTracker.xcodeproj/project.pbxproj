@@ -10,13 +10,13 @@
 		BA38E1EC224E619F00865F5F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38E1EB224E619F00865F5F /* CreateViewController.swift */; };
 		BA38E1EE224E6A8100865F5F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38E1ED224E6A8100865F5F /* TableViewCell.swift */; };
 		BA38E1F0224E6BD800865F5F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38E1EF224E6BD800865F5F /* TableViewController.swift */; };
+		BA656CA3230AA01000A0E94E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA656CA5230AA01000A0E94E /* LaunchScreen.storyboard */; };
 		BA885A2B22491455001ED75C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA885A2A22491455001ED75C /* Test.swift */; };
 		BAAFC1482303134C00B1F95D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFC1472303134C00B1F95D /* ChartViewController.swift */; };
 		BAE7016A2249092400160BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE701692249092400160BBF /* AppDelegate.swift */; };
 		BAE7016F2249092400160BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE7016D2249092400160BBF /* Main.storyboard */; };
 		BAE701712249092600160BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAE701702249092600160BBF /* Assets.xcassets */; };
 		BAE7017F2249092600160BBF /* ScoresTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7017E2249092600160BBF /* ScoresTrackerTests.swift */; };
-		BAE7018A2249095000160BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE701892249095000160BBF /* LaunchScreen.storyboard */; };
 		F183FE9F8152AFD8DCB46C35 /* Pods_ScoresTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB87925DC87738F87DC7C9B /* Pods_ScoresTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,9 @@
 		BA38E1ED224E6A8100865F5F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BA38E1EF224E6BD800865F5F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BA656C97230A9DD000A0E94E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		BA656CA4230AA01000A0E94E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA656CA7230AA01400A0E94E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BA656CA9230AA01500A0E94E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BA885A2A22491455001ED75C /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		BAAFC1472303134C00B1F95D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		BAE701662249092400160BBF /* ScoresTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoresTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +51,6 @@
 		BAE7017A2249092600160BBF /* ScoresTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoresTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE7017E2249092600160BBF /* ScoresTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTrackerTests.swift; sourceTree = "<group>"; };
 		BAE701802249092600160BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAE701892249095000160BBF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,7 @@
 				BA38E1EF224E6BD800865F5F /* TableViewController.swift */,
 				BAE701702249092600160BBF /* Assets.xcassets */,
 				BAE701752249092600160BBF /* Info.plist */,
-				BAE701892249095000160BBF /* LaunchScreen.storyboard */,
+				BA656CA5230AA01000A0E94E /* LaunchScreen.storyboard */,
 				BA885A2A22491455001ED75C /* Test.swift */,
 				BA38E1ED224E6A8100865F5F /* TableViewCell.swift */,
 				BAAFC1472303134C00B1F95D /* ChartViewController.swift */,
@@ -217,7 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAE7018A2249095000160BBF /* LaunchScreen.storyboard in Resources */,
+				BA656CA3230AA01000A0E94E /* LaunchScreen.storyboard in Resources */,
 				BAE701712249092600160BBF /* Assets.xcassets in Resources */,
 				BAE7016F2249092400160BBF /* Main.storyboard in Resources */,
 			);
@@ -307,6 +309,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BA656CA5230AA01000A0E94E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA656CA4230AA01000A0E94E /* Base */,
+				BA656CA7230AA01400A0E94E /* en */,
+				BA656CA9230AA01500A0E94E /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		BAE7016D2249092400160BBF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
