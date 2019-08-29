@@ -23,7 +23,6 @@ func stamp2Str(date timeStamp: Double) -> String {
 }
 
 public class LineDateChartFormatter: NSObject, IAxisValueFormatter {
-    let months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return stamp2Str(date: value)
     }
@@ -44,8 +43,16 @@ class ChartViewController: UIViewController {
             loadSamples()
         }
         
+        sortData()
         loadData()
-        // Do any additional setup after loading the view.
+    }
+    
+    private func cmp(_ t1: Testment, _ t2: Testment) -> Bool {
+        return t1.date < t2.date
+    }
+    
+    private func sortData() -> Void {
+        tests.sort(by: cmp)
     }
     
     private func loadTests() -> [Testment]?  {
@@ -72,9 +79,9 @@ class ChartViewController: UIViewController {
             default: break
             }
         }
-        let line0 = LineChartDataSet(entries: lineChartEntry0, label: "Chinese")
-        let line1 = LineChartDataSet(entries: lineChartEntry1, label: "Math")
-        let line2 = LineChartDataSet(entries: lineChartEntry2, label: "English")
+        let line0 = LineChartDataSet(entries: lineChartEntry0, label: subjectList[0])
+        let line1 = LineChartDataSet(entries: lineChartEntry1, label: subjectList[1])
+        let line2 = LineChartDataSet(entries: lineChartEntry2, label: subjectList[2])
         line0.colors = [NSUIColor.brown]
         line1.colors = [NSUIColor.blue]
         line2.colors = [NSUIColor.red]

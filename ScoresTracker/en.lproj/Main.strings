@@ -1,0 +1,48 @@
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "1vC-4Z-D5p"; */
+"1vC-4Z-D5p.title" = "Add";
+
+/* Class = "UIBarButtonItem"; title = "Chart"; ObjectID = "5zD-aa-8p9"; */
+"5zD-aa-8p9.title" = "Chart";
+
+/* Class = "UINavigationItem"; title = "Your Tests"; ObjectID = "HCd-gz-U4U"; */
+"HCd-gz-U4U.title" = "Your Tests";
+
+/* Class = "UINavigationItem"; title = "New Test"; ObjectID = "KGM-Wc-JLe"; */
+"KGM-Wc-JLe.title" = "New Test";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "LcT-js-iAe"; */
+"LcT-js-iAe.placeholder" = "Name";
+
+/* Class = "UITextField"; text = "TestName"; ObjectID = "LcT-js-iAe"; */
+"LcT-js-iAe.text" = "TestName";
+
+/* Class = "UITextField"; placeholder = "Score"; ObjectID = "Qf1-u8-E6B"; */
+"Qf1-u8-E6B.placeholder" = "Score";
+
+/* Class = "UITextField"; text = "100"; ObjectID = "Qf1-u8-E6B"; */
+"Qf1-u8-E6B.text" = "100";
+
+/* Class = "UINavigationItem"; title = "Chart"; ObjectID = "Qt6-am-Pbp"; */
+"Qt6-am-Pbp.title" = "Chart";
+
+/* Class = "UILabel"; text = "Test date:"; ObjectID = "RtF-jn-SBH"; */
+"RtF-jn-SBH.text" = "Test date:";
+
+/* Class = "UILabel"; text = "Subject:"; ObjectID = "UOx-Hu-TJy"; */
+"UOx-Hu-TJy.text" = "Subject:";
+
+/* Class = "UILabel"; text = "Score"; ObjectID = "arw-PJ-VSX"; */
+"arw-PJ-VSX.text" = "Score";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ncW-eI-QJd"; */
+"ncW-eI-QJd.text" = "Name";
+
+/* Class = "UILabel"; text = "Subject"; ObjectID = "oHS-j2-cyV"; */
+"oHS-j2-cyV.text" = "Subject";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "scC-Tg-jD0"; */
+"scC-Tg-jD0.text" = "Date";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "v4z-gQ-2u8"; */
+"v4z-gQ-2u8.title" = "Save";

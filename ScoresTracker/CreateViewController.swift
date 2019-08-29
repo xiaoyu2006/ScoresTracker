@@ -9,12 +9,6 @@
 import UIKit
 import os.log
 
-var subjectList = [
-    "Chinese",
-    "Math",
-    "English"
-]
-
 class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var test: Testment!
@@ -73,7 +67,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         
         let name = nameField.text ?? ""
         let score = Double(scoreField.text ?? "")
-        var subj = subjectPicker.selectedRow(inComponent: 0)
+        let subj = subjectPicker.selectedRow(inComponent: 0)
         let date = testDatePicker.date
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
@@ -94,5 +88,4 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             fatalError("The CreateViewController is not inside a navigation controller.")
         }
     }
-
 }

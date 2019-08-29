@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  ScoresTracker
+
+  Created by Nemo on 2019/8/29.
+  Copyright © 2019 Nemo. All rights reserved.
+*/
+
+CFBundleDisplayName = "计分者";

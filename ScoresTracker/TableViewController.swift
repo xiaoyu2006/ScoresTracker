@@ -9,6 +9,12 @@
 import UIKit
 import os.log
 
+let subjectList = [
+    NSLocalizedString("Chinese", comment: "Chinese"),
+    NSLocalizedString("Math", comment: "Math"),
+    NSLocalizedString("English", comment: "English")
+]
+
 class TableViewController: UITableViewController {
 
     var tests = [Testment]()
@@ -60,9 +66,9 @@ class TableViewController: UITableViewController {
         cell.scoreLabel.text = String(test.score)
         cell.nameLabel.text = test.name
         switch(test.subject) {
-        case 0: cell.subjectLabel.text = "Chinese"
-        case 1: cell.subjectLabel.text = "Math"
-        case 2: cell.subjectLabel.text = "English"
+        case 0: cell.subjectLabel.text = subjectList[0]
+        case 1: cell.subjectLabel.text = subjectList[1]
+        case 2: cell.subjectLabel.text = subjectList[2]
         default: break
         }
         

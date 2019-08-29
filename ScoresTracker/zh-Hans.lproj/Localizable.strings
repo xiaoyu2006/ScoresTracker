@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ScoresTracker
+
+  Created by Nemo on 2019/8/29.
+  Copyright © 2019 Nemo. All rights reserved.
+*/
+
+"Chinese" = "语文";
+"Math" = "数学";
+"English" = "英语";
