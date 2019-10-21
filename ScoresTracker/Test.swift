@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-struct PropertyKey {
+struct TestPropertyKey {
     static let name = "name"
     static let score = "score"
     static let subject = "subject"
@@ -30,17 +30,17 @@ class Testment: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(score, forKey: PropertyKey.score)
-        aCoder.encode(subject, forKey: PropertyKey.subject)
-        aCoder.encode(date, forKey:  PropertyKey.date)
+        aCoder.encode(name, forKey: TestPropertyKey.name)
+        aCoder.encode(score, forKey: TestPropertyKey.score)
+        aCoder.encode(subject, forKey: TestPropertyKey.subject)
+        aCoder.encode(date, forKey:  TestPropertyKey.date)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let testName = aDecoder.decodeObject(forKey: PropertyKey.name)
-        let testScore = aDecoder.decodeDouble(forKey: PropertyKey.score)
-        let testSubject = aDecoder.decodeInteger(forKey: PropertyKey.subject)
-        let testDate = aDecoder.decodeObject(forKey: PropertyKey.date)
+        let testName = aDecoder.decodeObject(forKey: TestPropertyKey.name)
+        let testScore = aDecoder.decodeDouble(forKey: TestPropertyKey.score)
+        let testSubject = aDecoder.decodeInteger(forKey: TestPropertyKey.subject)
+        let testDate = aDecoder.decodeObject(forKey: TestPropertyKey.date)
         self.init(name: testName as? String ?? "nameError", score: testScore as? Double ?? 0, subject: testSubject as? Int ?? 0, date: testDate as? Date ?? Date(timeIntervalSince1970: 100000))
         // Date & Score & Subject
     }
